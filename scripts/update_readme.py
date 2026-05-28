@@ -24,30 +24,30 @@ HEADER = """# Awesome Cookiecutters [![Awesome](https://awesome.re/badge.svg)](h
 
 A curated list of useful [Cookiecutter](https://github.com/cookiecutter/cookiecutter) templates and related resources.
 
-We keep this list simple: great repositories, short descriptions, and enough structure to make discovery easy. Search will live at <https://awesome-repos.cap.gregagi.com/> when ready.
+We keep this list simple: great resources, short descriptions, and enough structure to make discovery easy. Search will live at <https://awesome-repos.cap.gregagi.com/> when ready.
 
-Repository metadata is generated from [repos.yml](repos.yml) and refreshed by GitHub Actions.
+Catalog metadata is generated from [repos.yml](repos.yml) and refreshed by GitHub Actions.
 """
 
 FOOTER = """## Contributing
 
-Pull requests are welcome. Please add repositories that are useful, maintained, and clearly documented.
+Pull requests are welcome. Please add resources that are useful, maintained, and clearly documented.
 
-Add entries to `repos.yml`, then regenerate the README:
-
-```sh
-python -m pip install -r scripts/requirements.txt
-GITHUB_TOKEN="$(gh auth token)" python scripts/update_readme.py
-```
+Add entries to `repos.yml` and open a pull request. GitHub Actions refreshes README metadata after changes are merged.
 
 For each entry, include:
 
-- Repository link
+- Link
 - Short description
 - The category where it fits best
+- Type for non-repository entries, such as `skill`
 
 Keep descriptions concise and neutral.
 """
+
+TYPE_LABELS = {
+    "skill": "AI skill",
+}
 
 
 class GitHubAPIError(RuntimeError):
@@ -103,6 +103,9 @@ def fetch_metadata(url: str, token: str | None) -> dict[str, Any]:
 
 
 def fetch_entry_metadata(entry: dict[str, Any], token: str | None) -> dict[str, Any]:
+    if entry_type(entry) != "repository":
+        return {}
+
     try:
         return fetch_metadata(entry["url"], token)
     except (GitHubAPIError, KeyError, TypeError, ValueError) as error:
@@ -125,13 +128,24 @@ def slugify_heading(value: str) -> str:
     return re.sub(r"\s+", "-", slug).strip("-")
 
 
-def render_repository(entry: dict[str, Any], metadata: dict[str, Any]) -> str:
+def entry_type(entry: dict[str, Any]) -> str:
+    return entry.get("type", "repository")
+
+
+def category_items(category: dict[str, Any]) -> list[dict[str, Any]]:
+    return category.get("items", category.get("repositories", []))
+
+
+def render_entry(entry: dict[str, Any], metadata: dict[str, Any]) -> str:
     name = entry["name"]
     url = entry["url"]
     description = entry["description"]
+    item_type = entry_type(entry)
     archived = entry.get("archived", False) or metadata.get("archived", False)
 
     details = []
+    if item_type != "repository":
+        details.append(TYPE_LABELS.get(item_type, item_type))
     if "stars" in metadata:
         details.append(f"{format_count(metadata['stars'])} stars")
     if "last_commit" in metadata:
@@ -142,10 +156,10 @@ def render_repository(entry: dict[str, Any], metadata: dict[str, Any]) -> str:
         details.append("archived")
 
     metadata_suffix = f" _{' | '.join(details)}._" if details else ""
-    repository_text = f"[{name}]({url}) - {description}{metadata_suffix}"
+    entry_text = f"[{name}]({url}) - {description}{metadata_suffix}"
     if archived:
-        repository_text = f"~~{repository_text}~~"
-    return f"- {repository_text}"
+        entry_text = f"~~{entry_text}~~"
+    return f"- {entry_text}"
 
 
 def render_readme(data: dict[str, Any], token: str | None, fetch: bool) -> str:
@@ -160,9 +174,9 @@ def render_readme(data: dict[str, Any], token: str | None, fetch: bool) -> str:
     for category in categories:
         lines.append(f"## {category['name']}")
         lines.append("")
-        for entry in category["repositories"]:
+        for entry in category_items(category):
             metadata = fetch_entry_metadata(entry, token) if fetch else {}
-            lines.append(render_repository(entry, metadata))
+            lines.append(render_entry(entry, metadata))
         lines.append("")
 
     lines.append(FOOTER)
