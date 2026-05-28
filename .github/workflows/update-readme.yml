@@ -9,7 +9,6 @@ on:
       - repos.yml
       - scripts/update_readme.py
       - scripts/requirements.txt
-      - .github/workflows/update-readme.yml
   schedule:
     - cron: "17 8 * * 1"
 
