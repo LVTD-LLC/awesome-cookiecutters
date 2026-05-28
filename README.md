@@ -15,7 +15,7 @@ We keep this list simple: great repositories, short descriptions, and enough str
 
 ## Python and Django
 
-- [django-saas-starter](https://github.com/rasulkireev/django-saas-starter) - Django SaaS starter template with batteries included.
+- [django-saas-starter](https://github.com/LVTD-LLC/django-saas-starter) - Django SaaS starter template with batteries included.
 - [cookiecutter-django](https://github.com/cookiecutter/cookiecutter-django) - Production-ready Django project template.
 - [cookiecutter-djangopackage](https://github.com/pydanny/cookiecutter-djangopackage) - Template for reusable Django packages.
 - [cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage) - Template for Python packages.
@@ -23,7 +23,6 @@ We keep this list simple: great repositories, short descriptions, and enough str
 ## Data Science and ML
 
 - [cookiecutter-data-science](https://github.com/drivendataorg/cookiecutter-data-science) - Logical, reasonably standardized project structure for data science work.
-- [cookiecutter-data-science-v2](https://github.com/drivendataorg/cookiecutter-data-science/tree/v2) - Updated version of the DrivenData data science project structure.
 
 ## Web Apps and APIs
 
@@ -34,7 +33,7 @@ We keep this list simple: great repositories, short descriptions, and enough str
 ## DevOps and Infrastructure
 
 - [cookiecutter-ansible-role](https://github.com/iknite/cookiecutter-ansible-role) - Template for Ansible roles.
-- [cookiecutter-terraform-module](https://github.com/JamesWoolfenden/cookiecutter-terraform-module) - Template for Terraform modules.
+- [terraform-module-cookiecutter](https://github.com/TerraformInDepth/terraform-module-cookiecutter) - Template for Terraform modules.
 
 ## General Resources
 
