@@ -2,6 +2,14 @@ name: Update README metadata
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - repos.yml
+      - scripts/update_readme.py
+      - scripts/requirements.txt
+      - .github/workflows/update-readme.yml
   schedule:
     - cron: "17 8 * * 1"
 

@@ -12,14 +12,7 @@ Please include:
 
 Good entries are useful, documented, and reasonably maintained. Avoid adding abandoned or very narrow templates unless they are still clearly valuable.
 
-Add entries to `repos.yml`, then regenerate `README.md`:
-
-```sh
-python -m pip install -r scripts/requirements.txt
-GITHUB_TOKEN="$(gh auth token)" python scripts/update_readme.py
-```
-
-GitHub Actions also refreshes README metadata weekly.
+Add entries to `repos.yml` and open a pull request. GitHub Actions refreshes README metadata after changes are merged.
 
 ## Style
 

@@ -62,8 +62,8 @@ Repository metadata is generated from [repos.yml](repos.yml) and refreshed by Gi
 - [cookiecutter](https://github.com/cookiecutter/cookiecutter) - The command-line utility that creates projects from templates. _24,900 stars | last commit 2026-03-04._
 - [copier](https://github.com/copier-org/copier) - Library and command-line utility for rendering project templates. _3,379 stars | last commit 2026-05-27._
 - [cruft](https://github.com/cruft/cruft) - Tool for updating projects generated from Cookiecutter templates. _1,568 stars | last commit 2024-12-25._
-- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _295,696 stars | last commit 2026-05-28._
-- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _299,981 stars | last commit 2026-05-28._
+- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _295,699 stars | last commit 2026-05-28._
+- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _299,986 stars | last commit 2026-05-28._
 - [awesome-django](https://github.com/wsvincent/awesome-django) - Reference example of a Django Awesome list. _11,108 stars | last commit 2026-05-26._
 
 ## Archived Templates
@@ -74,12 +74,7 @@ Repository metadata is generated from [repos.yml](repos.yml) and refreshed by Gi
 
 Pull requests are welcome. Please add repositories that are useful, maintained, and clearly documented.
 
-Add entries to `repos.yml`, then regenerate the README:
-
-```sh
-python -m pip install -r scripts/requirements.txt
-GITHUB_TOKEN="$(gh auth token)" python scripts/update_readme.py
-```
+Add entries to `repos.yml` and open a pull request. GitHub Actions refreshes README metadata after changes are merged.
 
 For each entry, include:
 
