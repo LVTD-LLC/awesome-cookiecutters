@@ -46,7 +46,6 @@ Keep descriptions concise and neutral.
 """
 
 TYPE_LABELS = {
-    "repository": "repository",
     "skill": "AI skill",
 }
 
@@ -157,10 +156,10 @@ def render_entry(entry: dict[str, Any], metadata: dict[str, Any]) -> str:
         details.append("archived")
 
     metadata_suffix = f" _{' | '.join(details)}._" if details else ""
-    repository_text = f"[{name}]({url}) - {description}{metadata_suffix}"
+    entry_text = f"[{name}]({url}) - {description}{metadata_suffix}"
     if archived:
-        repository_text = f"~~{repository_text}~~"
-    return f"- {repository_text}"
+        entry_text = f"~~{entry_text}~~"
+    return f"- {entry_text}"
 
 
 def render_readme(data: dict[str, Any], token: str | None, fetch: bool) -> str:
