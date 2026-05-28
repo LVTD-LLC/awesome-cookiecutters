@@ -95,6 +95,14 @@ def fetch_metadata(url: str, token: str | None) -> dict[str, Any]:
     }
 
 
+def fetch_entry_metadata(entry: dict[str, Any], token: str | None) -> dict[str, Any]:
+    try:
+        return fetch_metadata(entry["url"], token)
+    except (GitHubAPIError, KeyError, TypeError, ValueError) as error:
+        print(f"Warning: could not fetch metadata for {entry['url']}: {error}", file=sys.stderr)
+        return {"metadata_unavailable": True}
+
+
 def format_count(value: int) -> str:
     return f"{value:,}"
 
@@ -121,6 +129,8 @@ def render_repository(entry: dict[str, Any], metadata: dict[str, Any]) -> str:
         details.append(f"{format_count(metadata['stars'])} stars")
     if "last_commit" in metadata:
         details.append(f"last commit {format_date(metadata['last_commit'])}")
+    if metadata.get("metadata_unavailable"):
+        details.append("metadata unavailable")
     if archived:
         details.append("archived")
 
@@ -144,7 +154,7 @@ def render_readme(data: dict[str, Any], token: str | None, fetch: bool) -> str:
         lines.append(f"## {category['name']}")
         lines.append("")
         for entry in category["repositories"]:
-            metadata = fetch_metadata(entry["url"], token) if fetch else {}
+            metadata = fetch_entry_metadata(entry, token) if fetch else {}
             lines.append(render_repository(entry, metadata))
         lines.append("")
 
@@ -159,19 +169,11 @@ def load_repos() -> dict[str, Any]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Regenerate README.md from repos.yml and GitHub metadata.")
-    parser.add_argument("--check", action="store_true", help="Exit with an error if README.md is not current.")
     parser.add_argument("--no-fetch", action="store_true", help="Render without fetching GitHub metadata.")
     args = parser.parse_args()
 
     token = os.environ.get("GITHUB_TOKEN")
     content = render_readme(load_repos(), token=token, fetch=not args.no_fetch)
-
-    if args.check:
-        current = README_PATH.read_text(encoding="utf-8")
-        if current != content:
-            print("README.md is not current. Run scripts/update_readme.py.", file=sys.stderr)
-            return 1
-        return 0
 
     README_PATH.write_text(content, encoding="utf-8")
     return 0

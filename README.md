@@ -36,7 +36,7 @@ Repository metadata is generated from [repos.yml](repos.yml) and refreshed by Gi
 
 ## Data Science and ML
 
-- [cookiecutter-data-science](https://github.com/drivendataorg/cookiecutter-data-science) - Logical, reasonably standardized project structure for data science work. _9,882 stars | last commit 2025-07-24._
+- [cookiecutter-data-science](https://github.com/drivendataorg/cookiecutter-data-science) - Logical, reasonably standardized project structure for data science work. _9,881 stars | last commit 2025-07-24._
 - [cookiecutter-mlops-package](https://github.com/fmind/cookiecutter-mlops-package) - Template for building and deploying Python packages and Docker images for MLOps. _442 stars | last commit 2026-01-25._
 - [extension-cookiecutter-ts](https://github.com/jupyterlab/extension-cookiecutter-ts) - Template for JupyterLab extensions in TypeScript. _189 stars | last commit 2024-07-09._
 - [scientific-python/cookie](https://github.com/scientific-python/cookie) - Scientific Python library development guide and project template. _396 stars | last commit 2026-05-26._
@@ -62,8 +62,8 @@ Repository metadata is generated from [repos.yml](repos.yml) and refreshed by Gi
 - [cookiecutter](https://github.com/cookiecutter/cookiecutter) - The command-line utility that creates projects from templates. _24,900 stars | last commit 2026-03-04._
 - [copier](https://github.com/copier-org/copier) - Library and command-line utility for rendering project templates. _3,379 stars | last commit 2026-05-27._
 - [cruft](https://github.com/cruft/cruft) - Tool for updating projects generated from Cookiecutter templates. _1,568 stars | last commit 2024-12-25._
-- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _295,694 stars | last commit 2026-05-28._
-- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _299,978 stars | last commit 2026-05-28._
+- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _295,696 stars | last commit 2026-05-28._
+- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _299,980 stars | last commit 2026-05-28._
 - [awesome-django](https://github.com/wsvincent/awesome-django) - Reference example of a Django Awesome list. _11,108 stars | last commit 2026-05-26._
 
 ## Archived Templates
