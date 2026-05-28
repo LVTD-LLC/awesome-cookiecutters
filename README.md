@@ -2,9 +2,9 @@
 
 A curated list of useful [Cookiecutter](https://github.com/cookiecutter/cookiecutter) templates and related resources.
 
-We keep this list simple: great repositories, short descriptions, and enough structure to make discovery easy. Search will live at <https://awesome-repos.cap.gregagi.com/> when ready.
+We keep this list simple: great resources, short descriptions, and enough structure to make discovery easy. Search will live at <https://awesome-repos.cap.gregagi.com/> when ready.
 
-Repository metadata is generated from [repos.yml](repos.yml) and refreshed by GitHub Actions.
+Catalog metadata is generated from [repos.yml](repos.yml) and refreshed by GitHub Actions.
 
 ## Contents
 
@@ -15,6 +15,7 @@ Repository metadata is generated from [repos.yml](repos.yml) and refreshed by Gi
 - [DevOps and Infrastructure](#devops-and-infrastructure)
 - [Other Languages and Platforms](#other-languages-and-platforms)
 - [Template Tools and Resources](#template-tools-and-resources)
+- [AI Skills](#ai-skills)
 - [Archived Templates](#archived-templates)
 - [Contributing](#contributing)
 
@@ -62,9 +63,13 @@ Repository metadata is generated from [repos.yml](repos.yml) and refreshed by Gi
 - [cookiecutter](https://github.com/cookiecutter/cookiecutter) - The command-line utility that creates projects from templates. _24,900 stars | last commit 2026-03-04._
 - [copier](https://github.com/copier-org/copier) - Library and command-line utility for rendering project templates. _3,379 stars | last commit 2026-05-27._
 - [cruft](https://github.com/cruft/cruft) - Tool for updating projects generated from Cookiecutter templates. _1,568 stars | last commit 2024-12-25._
-- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _295,696 stars | last commit 2026-05-28._
-- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _299,981 stars | last commit 2026-05-28._
+- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _295,706 stars | last commit 2026-05-28._
+- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _299,992 stars | last commit 2026-05-28._
 - [awesome-django](https://github.com/wsvincent/awesome-django) - Reference example of a Django Awesome list. _11,108 stars | last commit 2026-05-26._
+
+## AI Skills
+
+- [Cookiecutter Template Work](https://github.com/LVTD-LLC/skills/blob/main/skills/cookiecutter/SKILL.md) - AI skill for adding, changing, testing, and debugging Cookiecutter templates. _AI skill._
 
 ## Archived Templates
 
@@ -72,19 +77,15 @@ Repository metadata is generated from [repos.yml](repos.yml) and refreshed by Gi
 
 ## Contributing
 
-Pull requests are welcome. Please add repositories that are useful, maintained, and clearly documented.
+Pull requests are welcome. Please add resources that are useful, maintained, and clearly documented.
 
-Add entries to `repos.yml`, then regenerate the README:
-
-```sh
-python -m pip install -r scripts/requirements.txt
-GITHUB_TOKEN="$(gh auth token)" python scripts/update_readme.py
-```
+Add entries to `repos.yml` and open a pull request. GitHub Actions refreshes README metadata after changes are merged.
 
 For each entry, include:
 
-- Repository link
+- Link
 - Short description
 - The category where it fits best
+- Type for non-repository entries, such as `skill`
 
 Keep descriptions concise and neutral.
