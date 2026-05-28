@@ -1,6 +1,6 @@
 categories:
   - name: Python Packages and CLI
-    repositories:
+    items:
       - name: click-app
         url: https://github.com/simonw/click-app
         description: Template for creating new Click command-line tools.
@@ -18,7 +18,7 @@ categories:
         description: Modern Python project template using uv.
 
   - name: Django
-    repositories:
+    items:
       - name: cookiecutter-django
         url: https://github.com/cookiecutter/cookiecutter-django
         description: Production-ready Django project template.
@@ -36,7 +36,7 @@ categories:
         description: Django template focused on code quality and security.
 
   - name: Data Science and ML
-    repositories:
+    items:
       - name: cookiecutter-data-science
         url: https://github.com/drivendataorg/cookiecutter-data-science
         description: Logical, reasonably standardized project structure for data science work.
@@ -51,7 +51,7 @@ categories:
         description: Scientific Python library development guide and project template.
 
   - name: Web Apps and APIs
-    repositories:
+    items:
       - name: cookiecutter-fastapi
         url: https://github.com/arthurhenrique/cookiecutter-fastapi
         description: FastAPI project template.
@@ -66,7 +66,7 @@ categories:
         description: Vue.js webpack template.
 
   - name: DevOps and Infrastructure
-    repositories:
+    items:
       - name: cookiecutter-ansible-role
         url: https://github.com/iknite/cookiecutter-ansible-role
         description: Template for Ansible roles.
@@ -75,13 +75,13 @@ categories:
         description: Template for Terraform modules.
 
   - name: Other Languages and Platforms
-    repositories:
+    items:
       - name: cookiecutter-golang
         url: https://github.com/lacion/cookiecutter-golang
         description: Template for Go projects.
 
   - name: Template Tools and Resources
-    repositories:
+    items:
       - name: cookiecutter
         url: https://github.com/cookiecutter/cookiecutter
         description: The command-line utility that creates projects from templates.
@@ -101,8 +101,15 @@ categories:
         url: https://github.com/wsvincent/awesome-django
         description: Reference example of a Django Awesome list.
 
+  - name: AI Skills
+    items:
+      - type: skill
+        name: Cookiecutter Template Work
+        url: https://github.com/LVTD-LLC/skills/blob/main/skills/cookiecutter/SKILL.md
+        description: AI skill for adding, changing, testing, and debugging Cookiecutter templates.
+
   - name: Archived Templates
-    repositories:
+    items:
       - name: cookiecutter-djangopackage
         url: https://github.com/pydanny/cookiecutter-djangopackage
         description: Archived template for reusable Django packages.
