@@ -33,6 +33,13 @@ FOOTER = """## Contributing
 
 Pull requests are welcome. Please add repositories that are useful, maintained, and clearly documented.
 
+Add entries to `repos.yml`, then regenerate the README:
+
+```sh
+python -m pip install -r scripts/requirements.txt
+GITHUB_TOKEN="$(gh auth token)" python scripts/update_readme.py
+```
+
 For each entry, include:
 
 - Repository link
