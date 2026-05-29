@@ -1,0 +1,174 @@
+types:
+  repository:
+    label: Repositories
+    metadata: github
+  skill:
+    label: Skills
+    metadata: none
+
+categories:
+  - Python Packages and CLI
+  - Django
+  - Data Science and ML
+  - Web Apps and APIs
+  - DevOps and Infrastructure
+  - Other Languages and Platforms
+  - Template Tools and Resources
+  - AI Skills
+  - Archived Templates
+
+entities:
+  - name: click-app
+    type: repository
+    category: Python Packages and CLI
+    url: https://github.com/simonw/click-app
+    description: Template for creating new Click command-line tools.
+  - name: cookiecutter-pylibrary
+    type: repository
+    category: Python Packages and CLI
+    url: https://github.com/ionelmc/cookiecutter-pylibrary
+    description: Enhanced template for Python libraries.
+  - name: cookiecutter-pypackage
+    type: repository
+    category: Python Packages and CLI
+    url: https://github.com/audreyfeldroy/cookiecutter-pypackage
+    description: Template for Python packages.
+  - name: cookiecutter-pytest-plugin
+    type: repository
+    category: Python Packages and CLI
+    url: https://github.com/pytest-dev/cookiecutter-pytest-plugin
+    description: Template for pytest plugins.
+  - name: cookiecutter-uv
+    type: repository
+    category: Python Packages and CLI
+    url: https://github.com/osprey-oss/cookiecutter-uv
+    description: Modern Python project template using uv.
+
+  - name: cookiecutter-django
+    type: repository
+    category: Django
+    url: https://github.com/cookiecutter/cookiecutter-django
+    description: Production-ready Django project template.
+  - name: cookiecutter-django-rest
+    type: repository
+    category: Django
+    url: https://github.com/agconti/cookiecutter-django-rest
+    description: Template for building Django REST APIs.
+  - name: cookiecutter-django-vue
+    type: repository
+    category: Django
+    url: https://github.com/vchaptsev/cookiecutter-django-vue
+    description: Template for Django and Vue projects.
+  - name: django-saas-starter
+    type: repository
+    category: Django
+    url: https://github.com/LVTD-LLC/django-saas-starter
+    description: Django SaaS starter template with batteries included.
+  - name: wemake-django-template
+    type: repository
+    category: Django
+    url: https://github.com/wemake-services/wemake-django-template
+    description: Django template focused on code quality and security.
+
+  - name: cookiecutter-data-science
+    type: repository
+    category: Data Science and ML
+    url: https://github.com/drivendataorg/cookiecutter-data-science
+    description: Logical, reasonably standardized project structure for data science work.
+  - name: cookiecutter-mlops-package
+    type: repository
+    category: Data Science and ML
+    url: https://github.com/fmind/cookiecutter-mlops-package
+    description: Template for building and deploying Python packages and Docker images for MLOps.
+  - name: extension-cookiecutter-ts
+    type: repository
+    category: Data Science and ML
+    url: https://github.com/jupyterlab/extension-cookiecutter-ts
+    description: Template for JupyterLab extensions in TypeScript.
+  - name: scientific-python/cookie
+    type: repository
+    category: Data Science and ML
+    url: https://github.com/scientific-python/cookie
+    description: Scientific Python library development guide and project template.
+
+  - name: cookiecutter-fastapi
+    type: repository
+    category: Web Apps and APIs
+    url: https://github.com/arthurhenrique/cookiecutter-fastapi
+    description: FastAPI project template.
+  - name: cookiecutter-flask
+    type: repository
+    category: Web Apps and APIs
+    url: https://github.com/cookiecutter-flask/cookiecutter-flask
+    description: Flask application template.
+  - name: FastAPI-template
+    type: repository
+    category: Web Apps and APIs
+    url: https://github.com/s3rius/FastAPI-template
+    description: Feature-rich FastAPI project template.
+  - name: cookiecutter-vue
+    type: repository
+    category: Web Apps and APIs
+    url: https://github.com/vuejs-templates/webpack
+    description: Vue.js webpack template.
+
+  - name: cookiecutter-ansible-role
+    type: repository
+    category: DevOps and Infrastructure
+    url: https://github.com/iknite/cookiecutter-ansible-role
+    description: Template for Ansible roles.
+  - name: terraform-module-cookiecutter
+    type: repository
+    category: DevOps and Infrastructure
+    url: https://github.com/TerraformInDepth/terraform-module-cookiecutter
+    description: Template for Terraform modules.
+
+  - name: cookiecutter-golang
+    type: repository
+    category: Other Languages and Platforms
+    url: https://github.com/lacion/cookiecutter-golang
+    description: Template for Go projects.
+
+  - name: cookiecutter
+    type: repository
+    category: Template Tools and Resources
+    url: https://github.com/cookiecutter/cookiecutter
+    description: The command-line utility that creates projects from templates.
+  - name: copier
+    type: repository
+    category: Template Tools and Resources
+    url: https://github.com/copier-org/copier
+    description: Library and command-line utility for rendering project templates.
+  - name: cruft
+    type: repository
+    category: Template Tools and Resources
+    url: https://github.com/cruft/cruft
+    description: Tool for updating projects generated from Cookiecutter templates.
+  - name: awesome-selfhosted
+    type: repository
+    category: Template Tools and Resources
+    url: https://github.com/awesome-selfhosted/awesome-selfhosted
+    description: Reference example of a large Awesome list.
+  - name: awesome-python
+    type: repository
+    category: Template Tools and Resources
+    url: https://github.com/vinta/awesome-python
+    description: Reference example of a Python Awesome list.
+  - name: awesome-django
+    type: repository
+    category: Template Tools and Resources
+    url: https://github.com/wsvincent/awesome-django
+    description: Reference example of a Django Awesome list.
+
+  - name: Cookiecutter Template Work
+    type: skill
+    category: AI Skills
+    url: https://github.com/LVTD-LLC/skills/blob/main/skills/cookiecutter/SKILL.md
+    description: AI skill for adding, changing, testing, and debugging Cookiecutter templates.
+
+  - name: cookiecutter-djangopackage
+    type: repository
+    category: Archived Templates
+    url: https://github.com/pydanny/cookiecutter-djangopackage
+    description: Archived template for reusable Django packages.
+    archived: true
