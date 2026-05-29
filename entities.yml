@@ -2,6 +2,30 @@ types:
   repository:
     label: Repositories
     metadata: github
+  cookiecutter-template:
+    label: Cookiecutter Templates
+    metadata: github
+  copier-template:
+    label: Copier Templates
+    metadata: github
+  github-template:
+    label: GitHub Templates
+    metadata: github
+  project-generator:
+    label: Project Generators
+    metadata: github
+  template-tool:
+    label: Template Tools
+    metadata: github
+  awesome-list:
+    label: Awesome Lists
+    metadata: github
+  documentation:
+    label: Documentation
+    metadata: none
+  catalog:
+    label: Catalogs
+    metadata: none
   skill:
     label: Skills
     metadata: none
@@ -11,154 +35,325 @@ categories:
   - Django
   - Data Science and ML
   - Web Apps and APIs
+  - AI and Agent Apps
   - DevOps and Infrastructure
   - Other Languages and Platforms
-  - Template Tools and Resources
+  - Documentation and Publishing
+  - Template Tools
+  - Discovery and Reference
   - AI Skills
   - Archived Templates
 
 entities:
   - name: click-app
-    type: repository
+    type: cookiecutter-template
     category: Python Packages and CLI
     url: https://github.com/simonw/click-app
     description: Template for creating new Click command-line tools.
+  - name: cookiecutter-hypermodern-python
+    type: cookiecutter-template
+    category: Python Packages and CLI
+    url: https://github.com/cjolowicz/cookiecutter-hypermodern-python
+    description: Template for Python projects using Poetry, Nox, pytest, and automation.
+  - name: cookiecutter-poetry
+    type: cookiecutter-template
+    category: Python Packages and CLI
+    url: https://github.com/osprey-oss/cookiecutter-poetry
+    description: Modern Python project template using Poetry.
   - name: cookiecutter-pylibrary
-    type: repository
+    type: cookiecutter-template
     category: Python Packages and CLI
     url: https://github.com/ionelmc/cookiecutter-pylibrary
     description: Enhanced template for Python libraries.
   - name: cookiecutter-pypackage
-    type: repository
+    type: cookiecutter-template
     category: Python Packages and CLI
     url: https://github.com/audreyfeldroy/cookiecutter-pypackage
     description: Template for Python packages.
   - name: cookiecutter-pytest-plugin
-    type: repository
+    type: cookiecutter-template
     category: Python Packages and CLI
     url: https://github.com/pytest-dev/cookiecutter-pytest-plugin
     description: Template for pytest plugins.
   - name: cookiecutter-uv
-    type: repository
+    type: cookiecutter-template
     category: Python Packages and CLI
     url: https://github.com/osprey-oss/cookiecutter-uv
     description: Modern Python project template using uv.
+  - name: copier-astral
+    type: copier-template
+    category: Python Packages and CLI
+    url: https://github.com/ritwiktiwari/copier-astral
+    description: Copier template for Python projects using Astral tooling.
+  - name: copier-pdm
+    type: copier-template
+    category: Python Packages and CLI
+    url: https://github.com/pawamoy/copier-pdm
+    description: Copier template for PDM-managed Python projects.
+  - name: copier-poetry
+    type: copier-template
+    category: Python Packages and CLI
+    url: https://github.com/pawamoy/copier-poetry
+    description: Copier template for Poetry-managed Python projects.
+  - name: copier-uv
+    type: copier-template
+    category: Python Packages and CLI
+    url: https://github.com/pawamoy/copier-uv
+    description: Copier template for uv-managed Python projects.
+  - name: python-lib
+    type: cookiecutter-template
+    category: Python Packages and CLI
+    url: https://github.com/simonw/python-lib
+    description: Opinionated Cookiecutter template for Python libraries.
+  - name: substrate
+    type: copier-template
+    category: Python Packages and CLI
+    url: https://github.com/superlinear-ai/substrate
+    description: Modern Copier template for Python packages and apps.
+  - name: wemake-python-package
+    type: cookiecutter-template
+    category: Python Packages and CLI
+    url: https://github.com/wemake-services/wemake-python-package
+    description: Python package template focused on modern quality tooling.
+  - name: wolt-python-package-cookiecutter
+    type: cookiecutter-template
+    category: Python Packages and CLI
+    url: https://github.com/woltapp/wolt-python-package-cookiecutter
+    description: Cookiecutter template for modern, high-quality Python packages.
 
   - name: cookiecutter-django
-    type: repository
+    type: cookiecutter-template
     category: Django
     url: https://github.com/cookiecutter/cookiecutter-django
     description: Production-ready Django project template.
   - name: cookiecutter-django-rest
-    type: repository
+    type: cookiecutter-template
     category: Django
     url: https://github.com/agconti/cookiecutter-django-rest
     description: Template for building Django REST APIs.
   - name: cookiecutter-django-vue
-    type: repository
+    type: cookiecutter-template
     category: Django
     url: https://github.com/vchaptsev/cookiecutter-django-vue
     description: Template for Django and Vue projects.
+  - name: django-init
+    type: cookiecutter-template
+    category: Django
+    url: https://github.com/Fueled/django-init
+    description: Django project template with deployment and documentation tooling.
   - name: django-saas-starter
-    type: repository
+    type: cookiecutter-template
     category: Django
     url: https://github.com/LVTD-LLC/django-saas-starter
     description: Django SaaS starter template with batteries included.
+  - name: django-vite-inertia
+    type: copier-template
+    category: Django
+    url: https://github.com/SarthakJariwala/django-vite-inertia
+    description: Django template with Vite, Inertia, and modern frontend options.
+  - name: falco-cli
+    type: project-generator
+    category: Django
+    url: https://github.com/falcopackages/falco-cli
+    description: CLI and guides for scaffolding modern Django projects.
   - name: wemake-django-template
-    type: repository
+    type: cookiecutter-template
     category: Django
     url: https://github.com/wemake-services/wemake-django-template
     description: Django template focused on code quality and security.
 
   - name: cookiecutter-data-science
-    type: repository
+    type: cookiecutter-template
     category: Data Science and ML
     url: https://github.com/drivendataorg/cookiecutter-data-science
     description: Logical, reasonably standardized project structure for data science work.
   - name: cookiecutter-mlops-package
-    type: repository
+    type: cookiecutter-template
     category: Data Science and ML
     url: https://github.com/fmind/cookiecutter-mlops-package
     description: Template for building and deploying Python packages and Docker images for MLOps.
+  - name: cookiecutter-reproducible-science
+    type: cookiecutter-template
+    category: Data Science and ML
+    url: https://github.com/mkrapp/cookiecutter-reproducible-science
+    description: Template for reproducible and transparent science projects.
+  - name: cookiecutter-spatial-data-science
+    type: cookiecutter-template
+    category: Data Science and ML
+    url: https://github.com/Esri/cookiecutter-spatial-data-science
+    description: Template for spatial data science projects combining geography and AI workflows.
   - name: extension-cookiecutter-ts
-    type: repository
+    type: cookiecutter-template
     category: Data Science and ML
     url: https://github.com/jupyterlab/extension-cookiecutter-ts
     description: Template for JupyterLab extensions in TypeScript.
+  - name: extension-template
+    type: copier-template
+    category: Data Science and ML
+    url: https://github.com/jupyterlab/extension-template
+    description: Copier template for JupyterLab extensions.
+  - name: govcookiecutter
+    type: cookiecutter-template
+    category: Data Science and ML
+    url: https://github.com/best-practice-and-impact/govcookiecutter
+    description: Data science project template for government and public-sector work.
+  - name: napari-plugin-template
+    type: copier-template
+    category: Data Science and ML
+    url: https://github.com/napari/napari-plugin-template
+    description: Template for creating napari plugins.
+  - name: python-project-template
+    type: copier-template
+    category: Data Science and ML
+    url: https://github.com/lincc-frameworks/python-project-template
+    description: Scientific Python project template from LINCC Frameworks.
   - name: scientific-python/cookie
-    type: repository
+    type: cookiecutter-template
     category: Data Science and ML
     url: https://github.com/scientific-python/cookie
     description: Scientific Python library development guide and project template.
 
   - name: cookiecutter-fastapi
-    type: repository
+    type: cookiecutter-template
     category: Web Apps and APIs
     url: https://github.com/arthurhenrique/cookiecutter-fastapi
     description: FastAPI project template.
   - name: cookiecutter-flask
-    type: repository
+    type: cookiecutter-template
     category: Web Apps and APIs
     url: https://github.com/cookiecutter-flask/cookiecutter-flask
     description: Flask application template.
-  - name: FastAPI-template
-    type: repository
-    category: Web Apps and APIs
-    url: https://github.com/s3rius/FastAPI-template
-    description: Feature-rich FastAPI project template.
   - name: cookiecutter-vue
-    type: repository
+    type: cookiecutter-template
     category: Web Apps and APIs
     url: https://github.com/vuejs-templates/webpack
     description: Vue.js webpack template.
+  - name: FastAPI-template
+    type: cookiecutter-template
+    category: Web Apps and APIs
+    url: https://github.com/s3rius/FastAPI-template
+    description: Feature-rich FastAPI project template.
+  - name: fastapi-genesis
+    type: cookiecutter-template
+    category: Web Apps and APIs
+    url: https://github.com/Lolomgrofl/fastapi-genesis
+    description: FastAPI template generator with Docker, Alembic, PostgreSQL, Poetry, and pre-commit.
+  - name: full-stack-fastapi-template
+    type: github-template
+    category: Web Apps and APIs
+    url: https://github.com/fastapi/full-stack-fastapi-template
+    description: Full-stack FastAPI and React application template with Docker and GitHub Actions.
+
+  - name: aegis-stack
+    type: copier-template
+    category: AI and Agent Apps
+    url: https://github.com/lbedner/aegis-stack
+    description: Production-ready FastAPI platform template with LLM and RAG components.
+  - name: agent-api-cookiecutter
+    type: cookiecutter-template
+    category: AI and Agent Apps
+    url: https://github.com/neural-maze/agent-api-cookiecutter
+    description: Cookiecutter template for building agent APIs.
+  - name: llm-plugin-tools
+    type: cookiecutter-template
+    category: AI and Agent Apps
+    url: https://github.com/simonw/llm-plugin-tools
+    description: Template for creating LLM plugins that add tools.
 
   - name: cookiecutter-ansible-role
-    type: repository
+    type: cookiecutter-template
     category: DevOps and Infrastructure
     url: https://github.com/iknite/cookiecutter-ansible-role
     description: Template for Ansible roles.
   - name: terraform-module-cookiecutter
-    type: repository
+    type: cookiecutter-template
     category: DevOps and Infrastructure
     url: https://github.com/TerraformInDepth/terraform-module-cookiecutter
     description: Template for Terraform modules.
+  - name: terraform-module-template
+    type: github-template
+    category: DevOps and Infrastructure
+    url: https://github.com/DontShaveTheYak/terraform-module-template
+    description: Repository template for Terraform modules with CI/CD configured.
 
+  - name: BestieTemplate.jl
+    type: copier-template
+    category: Other Languages and Platforms
+    url: https://github.com/JuliaBesties/BestieTemplate.jl
+    description: Copier template for Julia packages.
   - name: cookiecutter-golang
-    type: repository
+    type: cookiecutter-template
     category: Other Languages and Platforms
     url: https://github.com/lacion/cookiecutter-golang
     description: Template for Go projects.
+  - name: cookiecutter-rust-actix-clean-architecture
+    type: cookiecutter-template
+    category: Other Languages and Platforms
+    url: https://github.com/microsoft/cookiecutter-rust-actix-clean-architecture
+    description: Rust Actix template for clean-architecture web services.
+
+  - name: cookiecutter-jupyter-book
+    type: cookiecutter-template
+    category: Documentation and Publishing
+    url: https://github.com/executablebooks/cookiecutter-jupyter-book
+    description: Cookiecutter template for simple Jupyter Book projects.
 
   - name: cookiecutter
-    type: repository
-    category: Template Tools and Resources
+    type: template-tool
+    category: Template Tools
     url: https://github.com/cookiecutter/cookiecutter
     description: The command-line utility that creates projects from templates.
   - name: copier
-    type: repository
-    category: Template Tools and Resources
+    type: template-tool
+    category: Template Tools
     url: https://github.com/copier-org/copier
     description: Library and command-line utility for rendering project templates.
+  - name: copier-template-extensions
+    type: template-tool
+    category: Template Tools
+    url: https://github.com/copier-org/copier-template-extensions
+    description: Copier extension for loading Jinja extensions from template-relative file paths.
   - name: cruft
-    type: repository
-    category: Template Tools and Resources
+    type: template-tool
+    category: Template Tools
     url: https://github.com/cruft/cruft
     description: Tool for updating projects generated from Cookiecutter templates.
-  - name: awesome-selfhosted
-    type: repository
-    category: Template Tools and Resources
-    url: https://github.com/awesome-selfhosted/awesome-selfhosted
-    description: Reference example of a large Awesome list.
-  - name: awesome-python
-    type: repository
-    category: Template Tools and Resources
-    url: https://github.com/vinta/awesome-python
-    description: Reference example of a Python Awesome list.
+
   - name: awesome-django
-    type: repository
-    category: Template Tools and Resources
+    type: awesome-list
+    category: Discovery and Reference
     url: https://github.com/wsvincent/awesome-django
     description: Reference example of a Django Awesome list.
+  - name: awesome-python
+    type: awesome-list
+    category: Discovery and Reference
+    url: https://github.com/vinta/awesome-python
+    description: Reference example of a Python Awesome list.
+  - name: awesome-selfhosted
+    type: awesome-list
+    category: Discovery and Reference
+    url: https://github.com/awesome-selfhosted/awesome-selfhosted
+    description: Reference example of a large Awesome list.
+  - name: Cookiecutter documentation
+    type: documentation
+    category: Discovery and Reference
+    url: https://cookiecutter.readthedocs.io/en/stable/
+    description: Official Cookiecutter documentation.
+  - name: Cookiecutter templates topic
+    type: catalog
+    category: Discovery and Reference
+    url: https://github.com/topics/cookiecutter-template
+    description: GitHub topic page for discovering Cookiecutter templates.
+  - name: Copier documentation
+    type: documentation
+    category: Discovery and Reference
+    url: https://copier.readthedocs.io/en/stable/
+    description: Official Copier documentation.
+  - name: Copier templates topic
+    type: catalog
+    category: Discovery and Reference
+    url: https://github.com/topics/copier-template
+    description: GitHub topic page for discovering Copier templates.
 
   - name: Cookiecutter Template Work
     type: skill
@@ -167,7 +362,7 @@ entities:
     description: AI skill for adding, changing, testing, and debugging Cookiecutter templates.
 
   - name: cookiecutter-djangopackage
-    type: repository
+    type: cookiecutter-template
     category: Archived Templates
     url: https://github.com/pydanny/cookiecutter-djangopackage
     description: Archived template for reusable Django packages.

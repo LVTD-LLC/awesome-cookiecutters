@@ -36,8 +36,8 @@ Entries can be placed anywhere in the flat list. The `category` field controls t
 
 Supported types live under `types` in `entities.yml`. The current supported types are:
 
-- `repository` for GitHub repositories. These use `metadata: github`, so stars and last commit dates are refreshed automatically.
-- `skill` for reusable skills or skill documentation. These use `metadata: none`.
+- `repository`, `cookiecutter-template`, `copier-template`, `github-template`, `project-generator`, `template-tool`, and `awesome-list` for GitHub-backed entities. These use `metadata: github`, so stars and last commit dates are refreshed automatically.
+- `documentation`, `catalog`, and `skill` for non-repository entities. These use `metadata: none`.
 
 To add a simple future type, add it under `types` with a label and `metadata: none`, then use that type on entries. Add a custom metadata mode only when the generator has code to support it.
 
@@ -45,4 +45,5 @@ To add a simple future type, add it under `types` with a label and `metadata: no
 
 - One sentence per description.
 - Keep entries alphabetized when practical.
-- Prefer direct links over blog posts or docs pages.
+- Prefer direct source links over blog posts or docs pages.
+- Set `type` for entries with a specific subtype, including repository-backed template types.
