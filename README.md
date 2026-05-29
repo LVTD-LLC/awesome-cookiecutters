@@ -145,8 +145,8 @@ Entity data is generated from [entities.yml](entities.yml). GitHub repository me
 ### Awesome Lists
 
 - [awesome-django](https://github.com/wsvincent/awesome-django) - Reference example of a Django Awesome list. _11,109 stars | last commit 2026-05-26._
-- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _300,159 stars | last commit 2026-05-29._
-- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _295,900 stars | last commit 2026-05-28._
+- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _300,162 stars | last commit 2026-05-29._
+- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _295,902 stars | last commit 2026-05-28._
 
 ### Documentation
 
