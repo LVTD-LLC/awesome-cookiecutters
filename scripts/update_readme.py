@@ -203,6 +203,36 @@ def render_footer(data: dict[str, Any]) -> str:
     return FOOTER_TEMPLATE.format(supported_types=supported_types)
 
 
+def render_category_entries(
+    grouped_entries: list[tuple[str, list[dict[str, Any]]]],
+    data: dict[str, Any],
+    token: str | None,
+    fetch: bool,
+) -> list[str]:
+    if len(grouped_entries) == 1:
+        return [
+            render_entity(entry, maybe_fetch_entry_metadata(entry, data["types"], token, fetch))
+            for entry in grouped_entries[0][1]
+        ]
+
+    rendered_groups = []
+    for type_name, entries in grouped_entries:
+        default_type_label = type_name.replace("-", " ").replace("_", " ").title()
+        type_label = data["types"][type_name].get("label", default_type_label)
+        group_lines = [f"### {type_label}", ""]
+        group_lines.extend(
+            render_entity(entry, maybe_fetch_entry_metadata(entry, data["types"], token, fetch)) for entry in entries
+        )
+        rendered_groups.append(group_lines)
+
+    lines = []
+    for index, group_lines in enumerate(rendered_groups):
+        if index > 0:
+            lines.append("")
+        lines.extend(group_lines)
+    return lines
+
+
 def render_readme(data: dict[str, Any], token: str | None, fetch: bool) -> str:
     categories = [category for category in category_names(data) if entries_for_category(data, category)]
     type_names = list(data["types"])
@@ -213,30 +243,18 @@ def render_readme(data: dict[str, Any], token: str | None, fetch: bool) -> str:
     lines.append("- [Contributing](#contributing)")
     lines.append("")
 
-    for category in categories:
+    for index, category in enumerate(categories):
         category_entries = entries_for_category(data, category)
         grouped_entries = entries_by_type(category_entries, type_names)
 
         lines.append(f"## {category}")
         lines.append("")
+        lines.extend(render_category_entries(grouped_entries, data, token, fetch))
+        if index < len(categories) - 1:
+            lines.append("")
 
-        if len(grouped_entries) == 1:
-            for entry in grouped_entries[0][1]:
-                metadata = maybe_fetch_entry_metadata(entry, data["types"], token, fetch)
-                lines.append(render_entity(entry, metadata))
-        else:
-            for index, (type_name, entries) in enumerate(grouped_entries):
-                if index > 0:
-                    lines.append("")
-                default_type_label = type_name.replace("-", " ").replace("_", " ").title()
-                type_label = data["types"][type_name].get("label", default_type_label)
-                lines.append(f"### {type_label}")
-                lines.append("")
-                for entry in entries:
-                    metadata = maybe_fetch_entry_metadata(entry, data["types"], token, fetch)
-                    lines.append(render_entity(entry, metadata))
+    if categories:
         lines.append("")
-
     lines.append(render_footer(data))
     return "\n".join(lines).rstrip() + "\n"
 
