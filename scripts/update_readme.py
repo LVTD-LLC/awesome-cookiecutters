@@ -225,7 +225,9 @@ def render_readme(data: dict[str, Any], token: str | None, fetch: bool) -> str:
                 metadata = maybe_fetch_entry_metadata(entry, data["types"], token, fetch)
                 lines.append(render_entity(entry, metadata))
         else:
-            for type_name, entries in grouped_entries:
+            for index, (type_name, entries) in enumerate(grouped_entries):
+                if index > 0:
+                    lines.append("")
                 default_type_label = type_name.replace("-", " ").replace("_", " ").title()
                 type_label = data["types"][type_name].get("label", default_type_label)
                 lines.append(f"### {type_label}")
@@ -233,7 +235,6 @@ def render_readme(data: dict[str, Any], token: str | None, fetch: bool) -> str:
                 for entry in entries:
                     metadata = maybe_fetch_entry_metadata(entry, data["types"], token, fetch)
                     lines.append(render_entity(entry, metadata))
-                lines.append("")
         lines.append("")
 
     lines.append(render_footer(data))
@@ -268,6 +269,8 @@ def validate_data(data: dict[str, Any]) -> None:
     categories = data.get("categories", [])
     if not isinstance(categories, list) or not all(isinstance(category, str) for category in categories):
         raise DataValidationError("`categories` must be a list of strings.")
+    if len(categories) != len(set(categories)):
+        raise DataValidationError("`categories` must not contain duplicate entries.")
 
     entities = data.get("entities")
     if not isinstance(entities, list):
