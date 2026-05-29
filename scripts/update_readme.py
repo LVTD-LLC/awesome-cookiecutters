@@ -23,7 +23,7 @@ SUPPORTED_METADATA_MODES = {"github", "none"}
 
 HEADER = """# Awesome Cookiecutters [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-A curated list of useful [Cookiecutter](https://github.com/cookiecutter/cookiecutter) templates, skills, and related resources.
+A curated list of useful [Cookiecutter](https://github.com/cookiecutter/cookiecutter) templates, adjacent project templates, skills, and related resources.
 
 We keep this list simple: useful entities, short descriptions, and enough structure to make discovery easy. Search will live at <https://awesome-repos.cap.gregagi.com/> when ready.
 
