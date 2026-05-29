@@ -63,8 +63,8 @@ Entity data is generated from [entities.yml](entities.yml). GitHub repository me
 - [cookiecutter](https://github.com/cookiecutter/cookiecutter) - The command-line utility that creates projects from templates. _24,900 stars | last commit 2026-03-04._
 - [copier](https://github.com/copier-org/copier) - Library and command-line utility for rendering project templates. _3,384 stars | last commit 2026-05-28._
 - [cruft](https://github.com/cruft/cruft) - Tool for updating projects generated from Cookiecutter templates. _1,568 stars | last commit 2024-12-25._
-- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _295,894 stars | last commit 2026-05-28._
-- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _300,147 stars | last commit 2026-05-29._
+- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _295,895 stars | last commit 2026-05-28._
+- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _300,148 stars | last commit 2026-05-29._
 - [awesome-django](https://github.com/wsvincent/awesome-django) - Reference example of a Django Awesome list. _11,109 stars | last commit 2026-05-26._
 
 ## AI Skills

@@ -264,6 +264,18 @@ def require_string(entry: dict[str, Any], field: str, index: int) -> None:
         raise DataValidationError(f"Entry #{index} must include a non-empty `{field}` string.")
 
 
+def validate_unique_entity_field(entities: list[dict[str, Any]], field: str) -> None:
+    seen = {}
+    for index, entry in enumerate(entities, start=1):
+        value = entry[field]
+        if value in seen:
+            raise DataValidationError(
+                f"`entities` must not contain duplicate `{field}` values: {value} "
+                f"(entries #{seen[value]} and #{index})."
+            )
+        seen[value] = index
+
+
 def validate_data(data: dict[str, Any]) -> None:
     if not isinstance(data, dict):
         raise DataValidationError("entities.yml must contain a mapping at the top level.")
@@ -304,6 +316,9 @@ def validate_data(data: dict[str, Any]) -> None:
             raise DataValidationError(
                 f"Entry #{index} ({entry['name']}) has unsupported type `{entry['type']}`. Supported types: {supported}."
             )
+
+    for field in ("name", "url"):
+        validate_unique_entity_field(entities, field)
 
 
 def load_data() -> dict[str, Any]:
