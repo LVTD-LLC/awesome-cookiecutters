@@ -18,39 +18,49 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 README_PATH = ROOT / "README.md"
-REPOS_PATH = ROOT / "repos.yml"
+DATA_PATH = ROOT / "entities.yml"
+SUPPORTED_METADATA_MODES = {"github", "none"}
 
 HEADER = """# Awesome Cookiecutters [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-A curated list of useful [Cookiecutter](https://github.com/cookiecutter/cookiecutter) templates and related resources.
+A curated list of useful [Cookiecutter](https://github.com/cookiecutter/cookiecutter) templates, skills, and related resources.
 
-We keep this list simple: great resources, short descriptions, and enough structure to make discovery easy. Search will live at <https://awesome-repos.cap.gregagi.com/> when ready.
+We keep this list simple: useful entities, short descriptions, and enough structure to make discovery easy. Search will live at <https://awesome-repos.cap.gregagi.com/> when ready.
 
-Catalog metadata is generated from [repos.yml](repos.yml) and refreshed by GitHub Actions.
+Entity data is generated from [entities.yml](entities.yml). GitHub repository metadata is refreshed by GitHub Actions.
 """
 
-FOOTER = """## Contributing
+FOOTER_TEMPLATE = """## Contributing
 
-Pull requests are welcome. Please add resources that are useful, maintained, and clearly documented.
+Pull requests are welcome. Please add entities that are useful, maintained, and clearly documented.
 
-Add entries to `repos.yml` and open a pull request. GitHub Actions refreshes README metadata after changes are merged.
+Add entries to `entities.yml`, then regenerate the README:
+
+```sh
+python -m pip install -r scripts/requirements.txt
+GITHUB_TOKEN="$(gh auth token)" python scripts/update_readme.py
+```
 
 For each entry, include:
 
+- Type
 - Link
 - Short description
-- The category where it fits best
-- Type for non-repository entries, such as `skill`
+- Category
+
+Supported entity types are currently: {supported_types}. New simple entity types can be added under `types` in `entities.yml`.
+
+Entries can be placed anywhere in the flat `entities` list. The `category` field controls the README section; the top-level `categories` list only controls display order.
 
 Keep descriptions concise and neutral.
 """
 
-TYPE_LABELS = {
-    "skill": "AI skill",
-}
-
 
 class GitHubAPIError(RuntimeError):
+    pass
+
+
+class DataValidationError(RuntimeError):
     pass
 
 
@@ -103,9 +113,6 @@ def fetch_metadata(url: str, token: str | None) -> dict[str, Any]:
 
 
 def fetch_entry_metadata(entry: dict[str, Any], token: str | None) -> dict[str, Any]:
-    if entry_type(entry) != "repository":
-        return {}
-
     try:
         return fetch_metadata(entry["url"], token)
     except (GitHubAPIError, KeyError, TypeError, ValueError) as error:
@@ -128,24 +135,13 @@ def slugify_heading(value: str) -> str:
     return re.sub(r"\s+", "-", slug).strip("-")
 
 
-def entry_type(entry: dict[str, Any]) -> str:
-    return entry.get("type", "repository")
-
-
-def category_items(category: dict[str, Any]) -> list[dict[str, Any]]:
-    return category.get("items", category.get("repositories", []))
-
-
-def render_entry(entry: dict[str, Any], metadata: dict[str, Any]) -> str:
+def render_entity(entry: dict[str, Any], metadata: dict[str, Any]) -> str:
     name = entry["name"]
     url = entry["url"]
     description = entry["description"]
-    item_type = entry_type(entry)
     archived = entry.get("archived", False) or metadata.get("archived", False)
 
     details = []
-    if item_type != "repository":
-        details.append(TYPE_LABELS.get(item_type, item_type))
     if "stars" in metadata:
         details.append(f"{format_count(metadata['stars'])} stars")
     if "last_commit" in metadata:
@@ -162,39 +158,147 @@ def render_entry(entry: dict[str, Any], metadata: dict[str, Any]) -> str:
     return f"- {entry_text}"
 
 
+def metadata_mode_for(entry: dict[str, Any], type_configs: dict[str, dict[str, Any]]) -> str:
+    return type_configs[entry["type"]].get("metadata", "none")
+
+
+def maybe_fetch_entry_metadata(
+    entry: dict[str, Any],
+    type_configs: dict[str, dict[str, Any]],
+    token: str | None,
+    fetch: bool,
+) -> dict[str, Any]:
+    if not fetch or metadata_mode_for(entry, type_configs) != "github":
+        return {}
+    return fetch_entry_metadata(entry, token)
+
+
+def category_names(data: dict[str, Any]) -> list[str]:
+    configured = list(data.get("categories", []))
+    discovered = []
+
+    for entry in data["entities"]:
+        category = entry["category"]
+        if category not in configured and category not in discovered:
+            discovered.append(category)
+
+    return configured + discovered
+
+
+def entries_for_category(data: dict[str, Any], category: str) -> list[dict[str, Any]]:
+    return [entry for entry in data["entities"] if entry["category"] == category]
+
+
+def entries_by_type(entries: list[dict[str, Any]], type_names: list[str]) -> list[tuple[str, list[dict[str, Any]]]]:
+    grouped = []
+    for type_name in type_names:
+        type_entries = [entry for entry in entries if entry["type"] == type_name]
+        if type_entries:
+            grouped.append((type_name, type_entries))
+    return grouped
+
+
+def render_footer(data: dict[str, Any]) -> str:
+    supported_types = ", ".join(f"`{type_name}`" for type_name in data["types"])
+    return FOOTER_TEMPLATE.format(supported_types=supported_types)
+
+
 def render_readme(data: dict[str, Any], token: str | None, fetch: bool) -> str:
-    categories = data["categories"]
+    categories = [category for category in category_names(data) if entries_for_category(data, category)]
+    type_names = list(data["types"])
     lines = [HEADER, "## Contents", ""]
 
     for category in categories:
-        lines.append(f"- [{category['name']}](#{slugify_heading(category['name'])})")
+        lines.append(f"- [{category}](#{slugify_heading(category)})")
     lines.append("- [Contributing](#contributing)")
     lines.append("")
 
     for category in categories:
-        lines.append(f"## {category['name']}")
-        lines.append("")
-        for entry in category_items(category):
-            metadata = fetch_entry_metadata(entry, token) if fetch else {}
-            lines.append(render_entry(entry, metadata))
+        category_entries = entries_for_category(data, category)
+        grouped_entries = entries_by_type(category_entries, type_names)
+
+        lines.append(f"## {category}")
         lines.append("")
 
-    lines.append(FOOTER)
+        if len(grouped_entries) == 1:
+            for entry in grouped_entries[0][1]:
+                metadata = maybe_fetch_entry_metadata(entry, data["types"], token, fetch)
+                lines.append(render_entity(entry, metadata))
+        else:
+            for type_name, entries in grouped_entries:
+                default_type_label = type_name.replace("-", " ").replace("_", " ").title()
+                type_label = data["types"][type_name].get("label", default_type_label)
+                lines.append(f"### {type_label}")
+                lines.append("")
+                for entry in entries:
+                    metadata = maybe_fetch_entry_metadata(entry, data["types"], token, fetch)
+                    lines.append(render_entity(entry, metadata))
+                lines.append("")
+        lines.append("")
+
+    lines.append(render_footer(data))
     return "\n".join(lines).rstrip() + "\n"
 
 
-def load_repos() -> dict[str, Any]:
-    with REPOS_PATH.open("r", encoding="utf-8") as file:
-        return yaml.safe_load(file)
+def require_string(entry: dict[str, Any], field: str, index: int) -> None:
+    if not isinstance(entry.get(field), str) or not entry[field].strip():
+        raise DataValidationError(f"Entry #{index} must include a non-empty `{field}` string.")
+
+
+def validate_data(data: dict[str, Any]) -> None:
+    if not isinstance(data, dict):
+        raise DataValidationError("entities.yml must contain a mapping at the top level.")
+
+    types = data.get("types")
+    if not isinstance(types, dict) or not types:
+        raise DataValidationError("entities.yml must define at least one entity type under `types`.")
+
+    for type_name, type_config in types.items():
+        if not isinstance(type_name, str) or not type_name:
+            raise DataValidationError("Entity type names must be non-empty strings.")
+        if not isinstance(type_config, dict):
+            raise DataValidationError(f"Type `{type_name}` must be a mapping.")
+        metadata_mode = type_config.get("metadata", "none")
+        if metadata_mode not in SUPPORTED_METADATA_MODES:
+            supported = ", ".join(sorted(SUPPORTED_METADATA_MODES))
+            raise DataValidationError(
+                f"Type `{type_name}` uses unsupported metadata mode `{metadata_mode}`. Supported modes: {supported}."
+            )
+
+    categories = data.get("categories", [])
+    if not isinstance(categories, list) or not all(isinstance(category, str) for category in categories):
+        raise DataValidationError("`categories` must be a list of strings.")
+
+    entities = data.get("entities")
+    if not isinstance(entities, list):
+        raise DataValidationError("entities.yml must define a flat `entities` list.")
+
+    for index, entry in enumerate(entities, start=1):
+        if not isinstance(entry, dict):
+            raise DataValidationError(f"Entry #{index} must be a mapping.")
+        for field in ("name", "type", "category", "url", "description"):
+            require_string(entry, field, index)
+        if entry["type"] not in types:
+            supported = ", ".join(types)
+            raise DataValidationError(
+                f"Entry #{index} ({entry['name']}) has unsupported type `{entry['type']}`. Supported types: {supported}."
+            )
+
+
+def load_data() -> dict[str, Any]:
+    with DATA_PATH.open("r", encoding="utf-8") as file:
+        data = yaml.safe_load(file)
+    validate_data(data)
+    return data
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Regenerate README.md from repos.yml and GitHub metadata.")
+    parser = argparse.ArgumentParser(description="Regenerate README.md from entities.yml and GitHub metadata.")
     parser.add_argument("--no-fetch", action="store_true", help="Render without fetching GitHub metadata.")
     args = parser.parse_args()
 
     token = os.environ.get("GITHUB_TOKEN")
-    content = render_readme(load_repos(), token=token, fetch=not args.no_fetch)
+    content = render_readme(load_data(), token=token, fetch=not args.no_fetch)
 
     README_PATH.write_text(content, encoding="utf-8")
     return 0

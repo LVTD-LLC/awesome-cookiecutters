@@ -2,23 +2,47 @@
 
 Thanks for helping improve Awesome Cookiecutters.
 
-## Adding an entry
+## Adding an entity
 
 Please include:
 
+- A supported `type`
 - A link
 - A short, factual description
 - The most relevant category
 
 Good entries are useful, documented, and reasonably maintained. Avoid adding abandoned or very narrow resources unless they are still clearly valuable.
 
-Add entries to `repos.yml` and open a pull request. GitHub Actions refreshes README metadata after changes are merged.
+Add entries to the flat `entities` list in `entities.yml`, then regenerate `README.md`:
 
-Categories are defined in `repos.yml`. Use the most relevant existing category, or add a new category when the entry does not fit the current structure.
+```sh
+python -m pip install -r scripts/requirements.txt
+GITHUB_TOKEN="$(gh auth token)" python scripts/update_readme.py
+```
+
+GitHub Actions also refreshes README metadata after changes are merged into `main`.
+
+An entry looks like this:
+
+```yaml
+- name: example-template
+  type: repository
+  category: Python Packages and CLI
+  url: https://github.com/example/example-template
+  description: Template for example Python projects.
+```
+
+Entries can be placed anywhere in the flat list. The `category` field controls the README section; the top-level `categories` list only controls display order.
+
+Supported types live under `types` in `entities.yml`. The current supported types are:
+
+- `repository` for GitHub repositories. These use `metadata: github`, so stars and last commit dates are refreshed automatically.
+- `skill` for reusable skills or skill documentation. These use `metadata: none`.
+
+To add a simple future type, add it under `types` with a label and `metadata: none`, then use that type on entries. Add a custom metadata mode only when the generator has code to support it.
 
 ## Style
 
 - One sentence per description.
 - Keep entries alphabetized when practical.
-- Prefer direct source links over blog posts or docs pages.
-- Set `type` for non-repository entries, such as `skill`.
+- Prefer direct links over blog posts or docs pages.
