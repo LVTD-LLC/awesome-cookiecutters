@@ -145,7 +145,7 @@ entities:
     type: cookiecutter-template
     category: Django
     url: https://github.com/LVTD-LLC/django-saas-starter
-    description: Django SaaS starter template with batteries included.
+    description: Cookiecutter template for Django SaaS projects with batteries included.
   - name: django-vite-inertia
     type: copier-template
     category: Django

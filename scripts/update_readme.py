@@ -55,6 +55,7 @@ Entries can be placed anywhere in the flat `entities` list. The `category` field
 Keep descriptions concise and neutral.
 """
 
+
 class GitHubAPIError(RuntimeError):
     pass
 

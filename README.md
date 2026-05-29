@@ -53,7 +53,7 @@ Entity data is generated from [entities.yml](entities.yml). GitHub repository me
 - [cookiecutter-django-rest](https://github.com/agconti/cookiecutter-django-rest) - Template for building Django REST APIs. _1,602 stars | last commit 2025-12-11._
 - [cookiecutter-django-vue](https://github.com/vchaptsev/cookiecutter-django-vue) - Template for Django and Vue projects. _611 stars | last commit 2021-05-04._
 - [django-init](https://github.com/Fueled/django-init) - Django project template with deployment and documentation tooling. _200 stars | last commit 2025-01-08._
-- [django-saas-starter](https://github.com/LVTD-LLC/django-saas-starter) - Django SaaS starter template with batteries included. _23 stars | last commit 2026-05-29._
+- [django-saas-starter](https://github.com/LVTD-LLC/django-saas-starter) - Cookiecutter template for Django SaaS projects with batteries included. _23 stars | last commit 2026-05-29._
 - [wemake-django-template](https://github.com/wemake-services/wemake-django-template) - Django template focused on code quality and security. _2,253 stars | last commit 2026-05-29._
 
 ### Copier Templates
@@ -68,7 +68,7 @@ Entity data is generated from [entities.yml](entities.yml). GitHub repository me
 
 ### Cookiecutter Templates
 
-- [cookiecutter-data-science](https://github.com/drivendataorg/cookiecutter-data-science) - Logical, reasonably standardized project structure for data science work. _9,881 stars | last commit 2025-07-24._
+- [cookiecutter-data-science](https://github.com/drivendataorg/cookiecutter-data-science) - Logical, reasonably standardized project structure for data science work. _9,882 stars | last commit 2025-07-24._
 - [cookiecutter-mlops-package](https://github.com/fmind/cookiecutter-mlops-package) - Template for building and deploying Python packages and Docker images for MLOps. _442 stars | last commit 2026-01-25._
 - [cookiecutter-reproducible-science](https://github.com/mkrapp/cookiecutter-reproducible-science) - Template for reproducible and transparent science projects. _195 stars | last commit 2025-03-18._
 - [cookiecutter-spatial-data-science](https://github.com/Esri/cookiecutter-spatial-data-science) - Template for spatial data science projects combining geography and AI workflows. _42 stars | last commit 2026-05-15._
@@ -145,8 +145,8 @@ Entity data is generated from [entities.yml](entities.yml). GitHub repository me
 ### Awesome Lists
 
 - [awesome-django](https://github.com/wsvincent/awesome-django) - Reference example of a Django Awesome list. _11,109 stars | last commit 2026-05-26._
-- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _300,158 stars | last commit 2026-05-29._
-- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _295,901 stars | last commit 2026-05-28._
+- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _300,159 stars | last commit 2026-05-29._
+- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _295,900 stars | last commit 2026-05-28._
 
 ### Documentation
 
