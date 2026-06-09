@@ -2,7 +2,7 @@
 
 A curated list of useful [Cookiecutter](https://github.com/cookiecutter/cookiecutter) templates, adjacent project templates, skills, and related resources.
 
-We keep this list simple: useful entities, short descriptions, and enough structure to make discovery easy. Search will live at <https://awesome-repos.cap.gregagi.com/> when ready.
+We keep this list simple: useful entities, short descriptions, and enough structure to make discovery easy. Search repos here: <https://awesome.lvtd.dev/lists/awesome-cookiecutters/>.
 
 Entity data is generated from [entities.yml](entities.yml). GitHub repository metadata is refreshed by GitHub Actions.
 
