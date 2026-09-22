@@ -254,6 +254,11 @@ entities:
     category: AI and Agent Apps
     url: https://github.com/neural-maze/agent-api-cookiecutter
     description: Cookiecutter template for building agent APIs.
+  - name: cookiecutter-x402-nano-agent
+    type: cookiecutter-template
+    category: AI and Agent Apps
+    url: https://github.com/PANDeveloper001/agent-payment-templates
+    description: Cookiecutter template for a self-custodied Nano (XNO) pay-per-call agent.
   - name: llm-plugin-tools
     type: cookiecutter-template
     category: AI and Agent Apps
