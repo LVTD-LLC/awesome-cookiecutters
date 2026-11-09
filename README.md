@@ -26,20 +26,20 @@ Entity data is generated from [entities.yml](entities.yml). GitHub repository me
 
 ### Cookiecutter Templates
 
-- [click-app](https://github.com/simonw/click-app) - Template for creating new Click command-line tools. _415 stars | last commit 2026-10-12._
+- [click-app](https://github.com/simonw/click-app) - Template for creating new Click command-line tools. _416 stars | last commit 2026-10-12._
 - [cookiecutter-hypermodern-python](https://github.com/cjolowicz/cookiecutter-hypermodern-python) - Template for Python projects using Poetry, Nox, pytest, and automation. _1,920 stars | last commit 2023-07-08._
 - [cookiecutter-poetry](https://github.com/osprey-oss/cookiecutter-poetry) - Modern Python project template using Poetry. _425 stars | last commit 2024-10-02._
 - [cookiecutter-pylibrary](https://github.com/ionelmc/cookiecutter-pylibrary) - Enhanced template for Python libraries. _1,300 stars | last commit 2026-10-17._
 - [cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage) - Template for Python packages. _4,604 stars | last commit 2026-09-30._
 - [cookiecutter-pytest-plugin](https://github.com/pytest-dev/cookiecutter-pytest-plugin) - Template for pytest plugins. _335 stars | last commit 2024-09-18._
-- [cookiecutter-uv](https://github.com/osprey-oss/cookiecutter-uv) - Modern Python project template using uv. _1,342 stars | last commit 2026-04-10._
+- [cookiecutter-uv](https://github.com/osprey-oss/cookiecutter-uv) - Modern Python project template using uv. _1,340 stars | last commit 2026-04-10._
 - [python-lib](https://github.com/simonw/python-lib) - Opinionated Cookiecutter template for Python libraries. _232 stars | last commit 2026-10-23._
-- [wemake-python-package](https://github.com/wemake-services/wemake-python-package) - Python package template focused on modern quality tooling. _451 stars | last commit 2026-11-02._
+- [wemake-python-package](https://github.com/wemake-services/wemake-python-package) - Python package template focused on modern quality tooling. _450 stars | last commit 2026-11-09._
 - [wolt-python-package-cookiecutter](https://github.com/woltapp/wolt-python-package-cookiecutter) - Cookiecutter template for modern, high-quality Python packages. _259 stars | last commit 2026-01-16._
 
 ### Copier Templates
 
-- [copier-astral](https://github.com/ritwiktiwari/copier-astral) - Copier template for Python projects using Astral tooling. _188 stars | last commit 2026-08-14._
+- [copier-astral](https://github.com/ritwiktiwari/copier-astral) - Copier template for Python projects using Astral tooling. _187 stars | last commit 2026-08-14._
 - [copier-pdm](https://github.com/pawamoy/copier-pdm) - Copier template for PDM-managed Python projects. _92 stars | last commit 2024-12-04._
 - ~~[copier-poetry](https://github.com/pawamoy/copier-poetry) - Copier template for Poetry-managed Python projects. _86 stars | last commit 2024-12-25 | archived._~~
 - [copier-uv](https://github.com/pawamoy/copier-uv) - Copier template for uv-managed Python projects. _159 stars | last commit 2026-10-23._
@@ -49,12 +49,12 @@ Entity data is generated from [entities.yml](entities.yml). GitHub repository me
 
 ### Cookiecutter Templates
 
-- [cookiecutter-django](https://github.com/cookiecutter/cookiecutter-django) - Production-ready Django project template. _13,635 stars | last commit 2026-10-16._
+- [cookiecutter-django](https://github.com/cookiecutter/cookiecutter-django) - Production-ready Django project template. _13,634 stars | last commit 2026-11-09._
 - [cookiecutter-django-rest](https://github.com/agconti/cookiecutter-django-rest) - Template for building Django REST APIs. _1,603 stars | last commit 2025-12-11._
 - [cookiecutter-django-vue](https://github.com/vchaptsev/cookiecutter-django-vue) - Template for Django and Vue projects. _604 stars | last commit 2021-05-04._
 - [django-init](https://github.com/Fueled/django-init) - Django project template with deployment and documentation tooling. _201 stars | last commit 2025-01-08._
 - [django-saas-starter](https://github.com/LVTD-LLC/django-saas-starter) - Cookiecutter template for Django SaaS projects with batteries included. _metadata unavailable._
-- [wemake-django-template](https://github.com/wemake-services/wemake-django-template) - Django template focused on code quality and security. _2,281 stars | last commit 2026-11-02._
+- [wemake-django-template](https://github.com/wemake-services/wemake-django-template) - Django template focused on code quality and security. _2,279 stars | last commit 2026-11-09._
 
 ### Copier Templates
 
@@ -68,13 +68,13 @@ Entity data is generated from [entities.yml](entities.yml). GitHub repository me
 
 ### Cookiecutter Templates
 
-- [cookiecutter-data-science](https://github.com/drivendataorg/cookiecutter-data-science) - Logical, reasonably standardized project structure for data science work. _10,124 stars | last commit 2026-10-03._
-- [cookiecutter-mlops-package](https://github.com/fmind/cookiecutter-mlops-package) - Template for building and deploying Python packages and Docker images for MLOps. _443 stars | last commit 2026-10-29._
+- [cookiecutter-data-science](https://github.com/drivendataorg/cookiecutter-data-science) - Logical, reasonably standardized project structure for data science work. _10,136 stars | last commit 2026-10-03._
+- [cookiecutter-mlops-package](https://github.com/fmind/cookiecutter-mlops-package) - Template for building and deploying Python packages and Docker images for MLOps. _443 stars | last commit 2026-11-02._
 - [cookiecutter-reproducible-science](https://github.com/mkrapp/cookiecutter-reproducible-science) - Template for reproducible and transparent science projects. _197 stars | last commit 2025-03-18._
 - [cookiecutter-spatial-data-science](https://github.com/Esri/cookiecutter-spatial-data-science) - Template for spatial data science projects combining geography and AI workflows. _42 stars | last commit 2026-10-08._
 - [extension-cookiecutter-ts](https://github.com/jupyterlab/extension-cookiecutter-ts) - Template for JupyterLab extensions in TypeScript. _190 stars | last commit 2026-09-04._
 - [govcookiecutter](https://github.com/best-practice-and-impact/govcookiecutter) - Data science project template for government and public-sector work. _158 stars | last commit 2026-06-12._
-- [scientific-python/cookie](https://github.com/scientific-python/cookie) - Scientific Python library development guide and project template. _412 stars | last commit 2026-11-02._
+- [scientific-python/cookie](https://github.com/scientific-python/cookie) - Scientific Python library development guide and project template. _413 stars | last commit 2026-11-02._
 
 ### Copier Templates
 
@@ -86,15 +86,15 @@ Entity data is generated from [entities.yml](entities.yml). GitHub repository me
 
 ### Cookiecutter Templates
 
-- [cookiecutter-fastapi](https://github.com/arthurhenrique/cookiecutter-fastapi) - FastAPI project template. _710 stars | last commit 2025-08-25._
-- [cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask) - Flask application template. _4,722 stars | last commit 2025-08-13._
-- [cookiecutter-vue](https://github.com/vuejs-templates/webpack) - Vue.js webpack template. _9,611 stars | last commit 2018-09-19._
+- [cookiecutter-fastapi](https://github.com/arthurhenrique/cookiecutter-fastapi) - FastAPI project template. _709 stars | last commit 2025-08-25._
+- [cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask) - Flask application template. _4,723 stars | last commit 2025-08-13._
+- [cookiecutter-vue](https://github.com/vuejs-templates/webpack) - Vue.js webpack template. _9,607 stars | last commit 2018-09-19._
 - [FastAPI-template](https://github.com/s3rius/FastAPI-template) - Feature-rich FastAPI project template. _2,837 stars | last commit 2026-05-05._
 - [fastapi-genesis](https://github.com/Lolomgrofl/fastapi-genesis) - FastAPI template generator with Docker, Alembic, PostgreSQL, Poetry, and pre-commit. _354 stars | last commit 2025-10-05._
 
 ### GitHub Templates
 
-- [full-stack-fastapi-template](https://github.com/fastapi/full-stack-fastapi-template) - Full-stack FastAPI and React application template with Docker and GitHub Actions. _46,144 stars | last commit 2026-10-26._
+- [full-stack-fastapi-template](https://github.com/fastapi/full-stack-fastapi-template) - Full-stack FastAPI and React application template with Docker and GitHub Actions. _46,215 stars | last commit 2026-11-03._
 
 ## AI and Agent Apps
 
@@ -105,13 +105,13 @@ Entity data is generated from [entities.yml](entities.yml). GitHub repository me
 
 ### Copier Templates
 
-- [aegis-stack](https://github.com/lbedner/aegis-stack) - Production-ready FastAPI platform template with LLM and RAG components. _146 stars | last commit 2026-11-02._
+- [aegis-stack](https://github.com/lbedner/aegis-stack) - Production-ready FastAPI platform template with LLM and RAG components. _146 stars | last commit 2026-11-09._
 
 ## DevOps and Infrastructure
 
 ### Cookiecutter Templates
 
-- [cookiecutter-ansible-role](https://github.com/iknite/cookiecutter-ansible-role) - Template for Ansible roles. _94 stars | last commit 2017-02-13._
+- [cookiecutter-ansible-role](https://github.com/iknite/cookiecutter-ansible-role) - Template for Ansible roles. _93 stars | last commit 2017-02-13._
 - [terraform-module-cookiecutter](https://github.com/TerraformInDepth/terraform-module-cookiecutter) - Template for Terraform modules. _181 stars | last commit 2025-11-24._
 
 ### GitHub Templates
@@ -135,8 +135,8 @@ Entity data is generated from [entities.yml](entities.yml). GitHub repository me
 
 ## Template Tools
 
-- [cookiecutter](https://github.com/cookiecutter/cookiecutter) - The command-line utility that creates projects from templates. _25,175 stars | last commit 2026-03-04._
-- [copier](https://github.com/copier-org/copier) - Library and command-line utility for rendering project templates. _3,677 stars | last commit 2026-11-02._
+- [cookiecutter](https://github.com/cookiecutter/cookiecutter) - The command-line utility that creates projects from templates. _25,180 stars | last commit 2026-03-04._
+- [copier](https://github.com/copier-org/copier) - Library and command-line utility for rendering project templates. _3,688 stars | last commit 2026-11-06._
 - [copier-template-extensions](https://github.com/copier-org/copier-template-extensions) - Copier extension for loading Jinja extensions from template-relative file paths. _35 stars | last commit 2026-10-22._
 - [cruft](https://github.com/cruft/cruft) - Tool for updating projects generated from Cookiecutter templates. _1,593 stars | last commit 2024-12-25._
 
@@ -145,8 +145,8 @@ Entity data is generated from [entities.yml](entities.yml). GitHub repository me
 ### Awesome Lists
 
 - [awesome-django](https://github.com/wsvincent/awesome-django) - Reference example of a Django Awesome list. _11,300 stars | last commit 2026-10-26._
-- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _331,976 stars | last commit 2026-11-02._
-- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _333,053 stars | last commit 2026-11-02._
+- [awesome-python](https://github.com/vinta/awesome-python) - Reference example of a Python Awesome list. _333,560 stars | last commit 2026-11-08._
+- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - Reference example of a large Awesome list. _335,419 stars | last commit 2026-11-07._
 
 ### Documentation
 
